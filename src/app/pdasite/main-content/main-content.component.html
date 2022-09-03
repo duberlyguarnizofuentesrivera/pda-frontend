@@ -1,0 +1,29 @@
+<div nz-row nzAlign="middle" nzJustify="center">
+  <div [nzXs]="23" nz-col>
+    <nz-steps [nzCurrent]="current" nzProgressDot>
+      <nz-step nzSubtitle="a graph type" nzTitle="Pick"></nz-step>
+      <nz-step nzSubtitle="your graph's text" nzTitle="Type"></nz-step>
+      <nz-step nzSubtitle="publication standard and output" nzTitle="Choose"></nz-step>
+    </nz-steps>
+  </div>
+
+</div>
+<div nz-row nzAlign="middle" nzJustify="center">
+  <div [nzXs]="23" class="steps-content" nz-col>
+    <app-main-graph-selector *ngIf="index==1"></app-main-graph-selector>
+    <app-main-graph-filler *ngIf="index==2"></app-main-graph-filler>
+    <app-main-output-selector *ngIf="index==3"></app-main-output-selector>
+    <app-main-error-message *ngIf="index==4"></app-main-error-message>
+    <div class="steps-action">
+      <button (click)="pre()" *ngIf="current > 0" nz-button nzType="default">
+        <span>Previous</span>
+      </button>
+      <button (click)="next()" *ngIf="current < 2" nz-button nzType="default">
+        <span>Next</span>
+      </button>
+      <button (click)="done()" *ngIf="current === 2" nz-button nzType="primary">
+        <span>Done</span>
+      </button>
+    </div>
+  </div>
+</div>
