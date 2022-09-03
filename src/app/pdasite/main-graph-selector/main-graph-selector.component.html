@@ -1,37 +1,10 @@
 <nz-list nzGrid>
   <div [nzGutter]="16" nz-row nzJustify="center">
-    <div [nzLg]="7" [nzMd]="9" [nzSm]="16" [nzXXl]="4" [nzXl]="5" [nzXs]="22" nz-col>
+    <div *ngFor="let graph of graphs" [nzLg]="7" [nzMd]="9" [nzSm]="16" [nzXXl]="4" [nzXl]="5" [nzXs]="22"
+         nz-col>
       <nz-list-item>
-        <a href="#">
-          <nz-card nzTitle="SWOT">Shows the strength and some things more</nz-card>
-        </a>
-      </nz-list-item>
-    </div>
-    <div [nzLg]="7" [nzMd]="9" [nzSm]="16" [nzXXl]="4" [nzXl]="5" [nzXs]="22" nz-col>
-      <nz-list-item>
-        <a href="#">
-          <nz-card nzTitle="Lean Canvas">A pretty little chart</nz-card>
-        </a>
-      </nz-list-item>
-    </div>
-    <div [nzLg]="7" [nzMd]="9" [nzSm]="16" [nzXXl]="4" [nzXl]="5" [nzXs]="22" nz-col>
-      <nz-list-item>
-        <a href="#">
-          <nz-card nzTitle="Fishi Fish">Something fish-a-like</nz-card>
-        </a>
-      </nz-list-item>
-    </div>
-    <div [nzLg]="7" [nzMd]="9" [nzSm]="16" [nzXXl]="4" [nzXl]="5" [nzXs]="22" nz-col>
-      <nz-list-item>
-        <a href="#">
-          <nz-card nzTitle="Laziness Graph">When you have time to waste in graphing</nz-card>
-        </a>
-      </nz-list-item>
-    </div>
-    <div [nzLg]="7" [nzMd]="9" [nzSm]="16" [nzXXl]="4" [nzXl]="5" [nzXs]="22" nz-col>
-      <nz-list-item>
-        <a href="#">
-          <nz-card nzTitle="Moar Mngmt Craziness">Management wants moar graphs!</nz-card>
+        <a (click)="graphSelected(graph.id)">
+          <nz-card nzTitle={{graph.title}}>{{graph.description}}</nz-card>
         </a>
       </nz-list-item>
     </div>

@@ -3,7 +3,7 @@
     <nz-steps [nzCurrent]="current" nzProgressDot>
       <nz-step nzSubtitle="a graph type" nzTitle="Pick"></nz-step>
       <nz-step nzSubtitle="your graph's text" nzTitle="Type"></nz-step>
-      <nz-step nzSubtitle="publication standard and output" nzTitle="Choose"></nz-step>
+      <nz-step nzSubtitle="publication standard" nzTitle="Choose"></nz-step>
     </nz-steps>
   </div>
 
@@ -22,7 +22,7 @@
         <span>Next</span>
       </button>
       <button (click)="done()" *ngIf="current === 2" nz-button nzType="primary">
-        <span>Done</span>
+        <span>Generate!</span>
       </button>
     </div>
   </div>
