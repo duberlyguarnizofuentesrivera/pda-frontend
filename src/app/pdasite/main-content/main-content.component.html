@@ -1,29 +1,45 @@
 <div nz-row nzAlign="middle" nzJustify="center">
   <div [nzXs]="23" nz-col>
-    <nz-steps [nzCurrent]="current" nzProgressDot>
-      <nz-step nzSubtitle="a graph type" nzTitle="Pick"></nz-step>
-      <nz-step nzSubtitle="your graph's text" nzTitle="Type"></nz-step>
-      <nz-step nzSubtitle="publication standard" nzTitle="Choose"></nz-step>
+    <nz-steps [nzCurrent]="current" [nzDirection]="smallScreen ? 'vertical': 'horizontal' ">
+      <nz-step nzIcon="box-plot" nzSubtitle="a graph type" nzTitle="Pick"></nz-step>
+      <nz-step nzIcon="edit" nzSubtitle="your graph's text" nzTitle="Type"></nz-step>
+      <nz-step nzIcon="book" nzSubtitle="publication standard" nzTitle="Choose"></nz-step>
     </nz-steps>
   </div>
-
 </div>
-<div nz-row nzAlign="middle" nzJustify="center">
+
+<nz-divider></nz-divider>
+
+<div nz-row nzAlign="bottom" nzJustify="center">
   <div [nzXs]="23" class="steps-content" nz-col>
     <app-main-graph-selector *ngIf="index==1"></app-main-graph-selector>
     <app-main-graph-filler *ngIf="index==2"></app-main-graph-filler>
     <app-main-output-selector *ngIf="index==3"></app-main-output-selector>
     <app-main-error-message *ngIf="index==4"></app-main-error-message>
-    <div class="steps-action">
-      <button (click)="pre()" *ngIf="current > 0" nz-button nzType="default">
-        <span>Previous</span>
-      </button>
-      <button (click)="next()" *ngIf="current < 2" nz-button nzType="default">
-        <span>Next</span>
-      </button>
-      <button (click)="done()" *ngIf="current === 2" nz-button nzType="primary">
-        <span>Generate!</span>
-      </button>
-    </div>
+    <nz-divider></nz-divider>
+  </div>
+</div>
+<div nz-row nzAlign="bottom" nzJustify="center">
+  <div class="steps-action">
+    <nz-space nzAlign="center" nzSize="large">
+      <div *nzSpaceItem>
+        <button (click)="pre()" *ngIf="current > 0" nz-button nzSize="large" nzType="default">
+          <span nz-icon nzTheme="fill" nzType="left-circle"></span>
+          <span>Previous</span>
+        </button>
+      </div>
+      <div *nzSpaceItem>
+        <button (click)="next()" *ngIf="current < 2" nz-button nzSize="large" nzType="default">
+          <span nz-icon nzTheme="fill" nzType="right-circle"></span>
+          <span>Next</span>
+        </button>
+      </div>
+      <div *nzSpaceItem>
+        <button (click)="done()" *ngIf="current === 2" nz-button nzSize="large" nzType="primary">
+          <span nz-icon nzTheme="fill" nzType="pie-chart"></span>
+          <span>Generate!</span>
+        </button>
+      </div>
+    </nz-space>
   </div>
 </div>

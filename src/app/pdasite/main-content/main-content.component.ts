@@ -9,8 +9,10 @@ export class MainContentComponent implements OnInit {
 
   current = 0;
   index = 1;
+  smallScreen: boolean;
 
   constructor() {
+    this.smallScreen = window.innerWidth < 768;
   }
 
   ngOnInit(): void {

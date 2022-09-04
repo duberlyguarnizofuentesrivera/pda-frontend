@@ -24,6 +24,10 @@ import {NzListModule} from "ng-zorro-antd/list";
 import {NzCardModule} from "ng-zorro-antd/card";
 import {NzSelectModule} from "ng-zorro-antd/select";
 import {MainContentComponent} from './pdasite/main-content/main-content.component';
+import {NzDividerModule} from "ng-zorro-antd/divider";
+import {NzSpaceModule} from "ng-zorro-antd/space";
+import {NzInputModule} from "ng-zorro-antd/input";
+import {NzFormModule} from "ng-zorro-antd/form";
 
 registerLocaleData(en);
 
@@ -51,7 +55,11 @@ registerLocaleData(en);
     NzGridModule,
     NzListModule,
     NzCardModule,
-    NzSelectModule
+    NzSelectModule,
+    NzDividerModule,
+    NzSpaceModule,
+    NzInputModule,
+    NzFormModule
   ],
   providers: [{provide: NZ_I18N, useValue: en_US}],
   bootstrap: [AppComponent]
