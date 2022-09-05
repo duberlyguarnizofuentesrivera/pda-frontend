@@ -28,6 +28,10 @@ import {NzDividerModule} from "ng-zorro-antd/divider";
 import {NzSpaceModule} from "ng-zorro-antd/space";
 import {NzInputModule} from "ng-zorro-antd/input";
 import {NzFormModule} from "ng-zorro-antd/form";
+import {AdminPanelComponent} from './admin-panel/admin-panel.component';
+import {routing} from "./app.routing";
+import {MainSiteComponent} from './main-site/main-site.component';
+import {NzTableModule} from "ng-zorro-antd/table";
 
 registerLocaleData(en);
 
@@ -41,6 +45,8 @@ registerLocaleData(en);
     MainOutputSelectorComponent,
     MainErrorMessageComponent,
     MainContentComponent,
+    AdminPanelComponent,
+    MainSiteComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +65,9 @@ registerLocaleData(en);
     NzDividerModule,
     NzSpaceModule,
     NzInputModule,
-    NzFormModule
+    NzFormModule,
+    routing,
+    NzTableModule
   ],
   providers: [{provide: NZ_I18N, useValue: en_US}],
   bootstrap: [AppComponent]
