@@ -32,6 +32,10 @@ import {AdminPanelComponent} from './admin-panel/admin-panel.component';
 import {routing} from "./app.routing";
 import {MainSiteComponent} from './main-site/main-site.component';
 import {NzTableModule} from "ng-zorro-antd/table";
+import {AdminContentComponent} from './pdasite/admin-content/admin-content.component';
+import {AdminManageGraphsComponent} from './pdasite/admin-manage-graphs/admin-manage-graphs.component';
+import {AdminManageAdminsComponent} from './pdasite/admin-manage-admins/admin-manage-admins.component';
+import {NzSegmentedModule} from "ng-zorro-antd/segmented";
 
 registerLocaleData(en);
 
@@ -47,6 +51,9 @@ registerLocaleData(en);
     MainContentComponent,
     AdminPanelComponent,
     MainSiteComponent,
+    AdminContentComponent,
+    AdminManageGraphsComponent,
+    AdminManageAdminsComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +74,8 @@ registerLocaleData(en);
     NzInputModule,
     NzFormModule,
     routing,
-    NzTableModule
+    NzTableModule,
+    NzSegmentedModule
   ],
   providers: [{provide: NZ_I18N, useValue: en_US}],
   bootstrap: [AppComponent]
