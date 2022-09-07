@@ -1,0 +1,14 @@
+<div class="spaced-bar" nz-row nzAlign="middle" nzJustify="center">
+  <div [nzMd]="12" [nzSm]="20" [nzXs]="24" nz-col>
+    <nz-segmented (nzValueChange)="changeView($event)" [nzOptions]="options" nzBlock></nz-segmented>
+  </div>
+</div>
+<div nz-row nzAlign="middle" nzJustify="center">
+  <div nz-col>
+
+    <nz-card>
+      <app-admin-manage-graphs *ngIf="current==1"></app-admin-manage-graphs>
+      <app-admin-manage-admins *ngIf="current==2"></app-admin-manage-admins>
+    </nz-card>
+  </div>
+</div>
