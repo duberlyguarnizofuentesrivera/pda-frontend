@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {AdminService} from "../../services/admin.service";
+import {Admin} from "../../model/admin";
 
 @Component({
   selector: 'app-admin-manage-admins',
@@ -7,10 +9,19 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AdminManageAdminsComponent implements OnInit {
 
-  constructor() {
+  admins: Admin[] = [];
+
+  constructor(private adminService: AdminService) {
   }
 
   ngOnInit(): void {
+    this.getAllAdmins();
+  }
+
+  getAllAdmins() {
+    this.adminService.getAdmins().subscribe((data: Admin[]) => {
+      this.admins = data;
+    });
   }
 
 }
