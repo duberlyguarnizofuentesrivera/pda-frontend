@@ -12,10 +12,27 @@
   <tr *ngFor="let admin of admins">
     <td>{{admin.name}}</td>
     <td>{{admin.email}}</td>
-    <td>{{admin.active}}</td>
+    <td>{{admin.active == true ? 'ACTIVO' : 'INACTIVO'}}</td>
     <td>
-      <button nz-button nzType="default">Edit</button>
+      <button (click)="setModalVisible(admin.userId)" nz-button nzType="default">Edit</button>
     </td>
   </tr>
   </tbody>
 </nz-table>
+<nz-modal [nzVisible]="isVisible" [nzMaskClosable]="true" (nzOnCancel)="hideModal()">
+  <ng-container *nzModalContent>
+    <nz-descriptions [nzTitle]="'Detalle De Admin: ' + admins[selectedAdminDetail].name ">
+      <nz-descriptions-item nzTitle="Nombre">{{admins[selectedAdminDetail].name}}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Email">{{admins[selectedAdminDetail].email}}</nz-descriptions-item>
+      <nz-descriptions-item
+        nzTitle="Fecha de creación">{{admins[selectedAdminDetail].creationDate}}</nz-descriptions-item>
+      <nz-descriptions-item
+        nzTitle="Fecha de actualización">{{admins[selectedAdminDetail].updateDate}}</nz-descriptions-item>
+      <nz-descriptions-item
+        nzTitle="Estado">{{ admins[selectedAdminDetail].active == true ? 'ACTIVO' : 'INACTIVO' }}</nz-descriptions-item>
+      <nz-descriptions-item
+        nzTitle="Fecha de ultimo login">{{admins[selectedAdminDetail].lastLoginDate}}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Id en la DB">{{admins[selectedAdminDetail].userId}}</nz-descriptions-item>
+    </nz-descriptions>
+  </ng-container>
+</nz-modal>
