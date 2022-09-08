@@ -36,6 +36,8 @@ import {AdminContentComponent} from './pdasite/admin-content/admin-content.compo
 import {AdminManageGraphsComponent} from './pdasite/admin-manage-graphs/admin-manage-graphs.component';
 import {AdminManageAdminsComponent} from './pdasite/admin-manage-admins/admin-manage-admins.component';
 import {NzSegmentedModule} from "ng-zorro-antd/segmented";
+import {NzModalModule} from "ng-zorro-antd/modal";
+import {NzDescriptionsModule} from "ng-zorro-antd/descriptions";
 
 registerLocaleData(en);
 
@@ -75,7 +77,9 @@ registerLocaleData(en);
     NzFormModule,
     routing,
     NzTableModule,
-    NzSegmentedModule
+    NzSegmentedModule,
+    NzModalModule,
+    NzDescriptionsModule
   ],
   providers: [{provide: NZ_I18N, useValue: en_US}],
   bootstrap: [AppComponent]

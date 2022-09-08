@@ -10,6 +10,8 @@ import {Admin} from "../../model/admin";
 export class AdminManageAdminsComponent implements OnInit {
 
   admins: Admin[] = [];
+  isVisible: boolean = false;
+  selectedAdminDetail: number = 0;
 
   constructor(private adminService: AdminService) {
   }
@@ -21,7 +23,17 @@ export class AdminManageAdminsComponent implements OnInit {
   getAllAdmins() {
     this.adminService.getAdmins().subscribe((data: Admin[]) => {
       this.admins = data;
+      console.log(data);
     });
+  }
+
+  setModalVisible(id: number) {
+    this.isVisible = true;
+    this.selectedAdminDetail = id - 1;
+  }
+
+  hideModal() {
+    this.isVisible = false;
   }
 
 }
