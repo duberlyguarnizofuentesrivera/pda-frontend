@@ -1,9 +1,9 @@
 <div nz-row nzAlign="middle" nzJustify="center">
   <div [nzXs]="23" nz-col>
     <nz-steps [nzCurrent]="current" [nzDirection]="smallScreen ? 'vertical': 'horizontal' ">
-      <nz-step nzIcon="box-plot" nzSubtitle="a graph type" nzTitle="Pick"></nz-step>
-      <nz-step nzIcon="edit" nzSubtitle="your graph's text" nzTitle="Type"></nz-step>
-      <nz-step nzIcon="book" nzSubtitle="publication standard" nzTitle="Choose"></nz-step>
+      <nz-step nzIcon="box-plot" nzSubtitle="un tipo de gráfico" nzTitle="Elige"></nz-step>
+      <nz-step nzIcon="edit" nzSubtitle="el texto de tu gráfico" nzTitle="Escribe"></nz-step>
+      <nz-step nzIcon="book" nzSubtitle="publicación promedio" nzTitle="Escoge"></nz-step>
     </nz-steps>
   </div>
 </div>
@@ -25,19 +25,19 @@
       <div *nzSpaceItem>
         <button (click)="pre()" *ngIf="current > 0" nz-button nzSize="large" nzType="default">
           <span nz-icon nzTheme="fill" nzType="left-circle"></span>
-          <span>Previous</span>
+          <span>Anterior</span>
         </button>
       </div>
       <div *nzSpaceItem>
         <button (click)="next()" *ngIf="current < 2" nz-button nzSize="large" nzType="default">
           <span nz-icon nzTheme="fill" nzType="right-circle"></span>
-          <span>Next</span>
+          <span>Siguiente</span>
         </button>
       </div>
       <div *nzSpaceItem>
         <button (click)="done()" *ngIf="current === 2" nz-button nzSize="large" nzType="primary">
           <span nz-icon nzTheme="fill" nzType="pie-chart"></span>
-          <span>Generate!</span>
+          <span>¡Generar!</span>
         </button>
       </div>
     </nz-space>
