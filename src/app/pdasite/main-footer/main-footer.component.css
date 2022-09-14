@@ -6,7 +6,7 @@ p {
   position: sticky;
   top: 100vh;
   background-color: #ebebeb;
-  padding: 20px 5px 0 5px;
+  padding: 20px 5px 0 20px;
 }
 .grayed-out-text{
   color: darkslategray;
