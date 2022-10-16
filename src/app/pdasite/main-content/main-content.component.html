@@ -1,45 +1,49 @@
-<div nz-row nzAlign="middle" nzJustify="center">
-  <div [nzXs]="23" nz-col>
-    <nz-steps [nzCurrent]="current" [nzDirection]="smallScreen ? 'vertical': 'horizontal' ">
-      <nz-step nzIcon="box-plot" nzSubtitle="un tipo de gráfico" nzTitle="Elige"></nz-step>
-      <nz-step nzIcon="edit" nzSubtitle="el texto de tu gráfico" nzTitle="Escribe"></nz-step>
-      <nz-step nzIcon="book" nzSubtitle="publicación promedio" nzTitle="Escoge"></nz-step>
-    </nz-steps>
+<script src="/src/script.js"></script>
+<div class="todoContenido">
+  <div nz-row nzAlign="middle" nzJustify="center">
+    <div [nzXs]="23" nz-col>
+      <nz-steps [nzCurrent]="current" [nzDirection]="smallScreen ? 'vertical': 'horizontal' ">
+        <nz-step nzIcon="box-plot" nzSubtitle="un tipo de gráfico" nzTitle="Elige"></nz-step>
+        <nz-step nzIcon="edit" nzSubtitle="el texto de tu gráfico" nzTitle="Escribe"></nz-step>
+        <nz-step nzIcon="book" nzSubtitle="publicación promedio" nzTitle="Escoge"></nz-step>
+      </nz-steps>
+    </div>
   </div>
-</div>
 
-<nz-divider></nz-divider>
-
-<div nz-row nzAlign="bottom" nzJustify="center">
-  <div [nzXs]="23" class="steps-content" nz-col>
-    <app-main-graph-selector *ngIf="index==1"></app-main-graph-selector>
-    <app-main-graph-filler *ngIf="index==2"></app-main-graph-filler>
-    <app-main-output-selector *ngIf="index==3"></app-main-output-selector>
-    <app-main-error-message *ngIf="index==4"></app-main-error-message>
-    <nz-divider></nz-divider>
+  <nz-divider></nz-divider>
+  <div class="selectGrafico" id="selectGrafico">
+    <div nz-row nzAlign="bottom" nzJustify="center">
+      <div [nzXs]="23" class="steps-content" nz-col>
+        <app-main-graph-selector *ngIf="index==1"></app-main-graph-selector>
+        <app-main-graph-filler *ngIf="index==2"></app-main-graph-filler>
+        <app-main-output-selector *ngIf="index==3"></app-main-output-selector>
+        <app-main-error-message *ngIf="index==4"></app-main-error-message>
+        <nz-divider></nz-divider>
+      </div>
+    </div>
   </div>
-</div>
-<div nz-row nzAlign="bottom" nzJustify="center">
-  <div class="steps-action">
-    <nz-space nzAlign="center" nzSize="large">
-      <div *nzSpaceItem>
-        <button (click)="pre()" *ngIf="current > 0" nz-button nzSize="large" nzType="default">
-          <span nz-icon nzTheme="fill" nzType="left-circle"></span>
-          <span>Anterior</span>
-        </button>
-      </div>
-      <div *nzSpaceItem>
-        <button (click)="next()" *ngIf="current < 2" nz-button nzSize="large" nzType="default">
-          <span nz-icon nzTheme="fill" nzType="right-circle"></span>
-          <span>Siguiente</span>
-        </button>
-      </div>
-      <div *nzSpaceItem>
-        <button (click)="done()" *ngIf="current === 2" nz-button nzSize="large" nzType="primary">
-          <span nz-icon nzTheme="fill" nzType="pie-chart"></span>
-          <span>¡Generar!</span>
-        </button>
-      </div>
-    </nz-space>
+  <div nz-row nzAlign="bottom" nzJustify="center">
+    <div class="steps-action">
+      <nz-space nzAlign="center" nzSize="large">
+        <div *nzSpaceItem>
+          <button (click)="pre()" *ngIf="current > 0" nz-button nzSize="large" nzType="default">
+            <span nz-icon nzTheme="fill" nzType="left-circle"></span>
+            <span>Anterior</span>
+          </button>
+        </div>
+        <div *nzSpaceItem>
+          <button (click)="next()" *ngIf="current < 2" nz-button nzSize="large" nzType="default">
+            <span nz-icon nzTheme="fill" nzType="right-circle"></span>
+            <span>Siguiente</span>
+          </button>
+        </div>
+        <div *nzSpaceItem>
+          <button (click)="done()" *ngIf="current === 2" nz-button nzSize="large" nzType="primary">
+            <span nz-icon nzTheme="fill" nzType="pie-chart"></span>
+            <span>¡Generar!</span>
+          </button>
+        </div>
+      </nz-space>
+    </div>
   </div>
 </div>
